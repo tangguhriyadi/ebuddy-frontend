@@ -14,3 +14,5 @@ export const userApiSlice = createApi({
         }),
     }),
 });
+
+export const { useUserQuery } = userApiSlice;
