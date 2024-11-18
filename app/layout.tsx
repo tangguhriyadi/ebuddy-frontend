@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import ReduxProvider from "@/store/provider";
 
 import "./globals.css";
+import MUIThemeProvider from "./theme/provider";
 
 const geistSans = localFont({
     src: "./fonts/GeistVF.woff",
@@ -28,7 +29,9 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body className={`${geistSans.variable} ${geistMono.variable}`}>
-                <ReduxProvider>{children}</ReduxProvider>
+                <ReduxProvider>
+                    <MUIThemeProvider>{children}</MUIThemeProvider>
+                </ReduxProvider>
             </body>
         </html>
     );
