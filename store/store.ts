@@ -6,8 +6,12 @@ import {
 } from "@reduxjs/toolkit";
 import { userApiSlice } from "../apis/userApi";
 import { setupListeners } from "@reduxjs/toolkit/query";
+import { default as userSlice } from "./slices/userSlice";
 
-const rootReducer = combineSlices(userApiSlice);
+const rootReducer = combineSlices({
+    [userApiSlice.reducerPath]: userApiSlice.reducer,
+    user: userSlice,
+});
 
 export type RootState = ReturnType<typeof rootReducer>;
 

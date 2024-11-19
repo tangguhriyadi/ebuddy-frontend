@@ -18,6 +18,10 @@ const theme = createTheme({
         },
         h2: {
             fontWeight: 700,
+            fontSize: "32px",
+        },
+        body1: {
+            fontWeight: 500,
         },
     },
 });
